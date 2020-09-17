@@ -4,6 +4,8 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 dj-env/
+__pycache__/
+.idea/
 
 # Other files and folders
 .settings/
