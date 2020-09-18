@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from store import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
+    path('store/', include('store.urls')),
     path('admin/', admin.site.urls),
 ]
 
@@ -25,5 +28,5 @@ urlpatterns = [
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        path(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
